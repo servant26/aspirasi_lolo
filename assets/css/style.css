@@ -53,7 +53,7 @@ html{
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn{
     font-weight: 500;
-    padding: 12px 20px;
+    padding: 10px 30px;
     background: #444; /* Warna tombol gelap */
     color: #fff; /* Warna teks tombol */
     border: none;
@@ -185,13 +185,13 @@ nav{
     border-radius: 5px;
 }
 .featured-name{
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
     color: var(--text-color-second);
     margin-block: 20px;
 }
 .typedText{
-    text-transform: capitalize;
+    text-transform: none;
     color: var(--text-color-third);
 }
 .featured-text-info{
@@ -644,7 +644,10 @@ footer{
         overflow-x: hidden; /* Tambahkan properti ini */
     }
     .featured-name{
-        font-size: 30px;
+        font-size: 26px;
+    }
+    .featured-text-info{
+        font-size: 13px;
     }
     .project-box{
         width: 100%;
@@ -654,6 +657,11 @@ footer{
     }
     .input-field{
         width: 100%;
+    }
+
+    .btn{
+        padding: 8px 22px;
+        font-size: 13px;
     }
 }
 

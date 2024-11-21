@@ -31,14 +31,30 @@
     }
 
 
-/* ----- TYPING EFFECT ----- */
-   var typingEffect = new Typed(".typedText",{
-      strings : ["Selamat Datang"],
-      loop : true,
-      typeSpeed : 100, 
-      backSpeed : 80,
-      backDelay : 2000
-   })
+// Function to determine greeting based on current time
+function getGreeting() {
+    const currentHour = new Date().getHours();
+
+    if (currentHour >= 6 && currentHour < 10) {
+        return "Pagii";
+    } else if (currentHour >= 10 && currentHour < 15) {
+        return "Selamat siang";
+    } else if (currentHour >= 15 && currentHour < 18) {
+        return "Selamat sore";
+    } else {
+        return "Selamat malam..";
+    }
+}
+
+// Initialize typing effect with the dynamic greeting
+const typingEffect = new Typed(".typedText", {
+    strings: [getGreeting()],
+    loop: true,
+    typeSpeed: 100, 
+    backSpeed: 80,
+    backDelay: 2000
+});
+
 
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
@@ -124,15 +140,4 @@ function scrollActive() {
 
   window.addEventListener('scroll', scrollActive)
 
-      // Mendapatkan hari dan tanggal saat ini
-    const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-    const today = new Date();
-    const dayName = days[today.getDay()];
-    const date = today.toLocaleDateString('id-ID', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    });
 
-    // Menampilkan hari dan tanggal
-    document.getElementById("currentDate").textContent = `${dayName}, ${date}`;
